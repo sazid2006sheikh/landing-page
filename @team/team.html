@@ -1,0 +1,397 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Team Members</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(#ffffff 0%, #2d2d2d 60%,#080808 40%);
+      
+    }
+    
+   /* Background with gradient and animation */
+.bg-animated {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 128, 128, 0.2));
+    background-size: 200% 200%;
+    animation: bgSlide 10s ease infinite;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Geometric shapes (rotating squares and animated lines) */
+.bg-animated::before,
+.bg-animated::after {
+    content: '';
+    position: absolute;
+    opacity: 0.2;
+    background: teal;
+    animation: shapeMove 15s linear infinite;
+    transform: rotate(45deg);
+}
+
+/* Top-left square */
+.bg-animated::before {
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    left: -100px;
+    border: 2px solid teal;
+    animation-delay: 0s;
+}
+
+/* Bottom-right square */
+.bg-animated::after {
+    width: 350px;
+    height: 350px;
+    bottom: -150px;
+    right: -150px;
+    border: 2px solid teal;
+    animation-delay: 3s;
+}
+
+/* Overlay gradient shapes */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(0, 128, 128, 0.3), rgba(0, 0, 0, 0.7));
+    mix-blend-mode: overlay;
+    animation: overlayShift 12s infinite alternate;
+}
+
+/* Shape animations */
+@keyframes shapeMove {
+    0% { transform: rotate(45deg) translate(0, 0); }
+    50% { transform: rotate(45deg) translate(20px, -20px); }
+    100% { transform: rotate(45deg) translate(0, 0); }
+}
+
+/* Overlay animation */
+@keyframes overlayShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Slide animation for gradient */
+@keyframes bgSlide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+    /* Card styling */
+.card {
+    background: linear-gradient(135deg, #04d2d2, #026262);
+    color: black;
+    padding: 1.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-position 0.3s ease;
+    background-size: 200% 200%;
+    position: relative;
+    border: 1px solid #026262 ;
+  }
+  
+  /* Hover effects with gradient animation */
+  .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 35px rgba(0, 0, 0, 0.3);
+    background-position: 100% 0;
+  }
+  
+  
+  /* Colorful gradient animations */
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f9fafb, #a0a1a2);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  #linkedin{
+    color: blue;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  #email{
+    color: rgb(227, 75, 4);
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  #linkedin:hover{
+    color: white;
+    transform: scale(1.2) rotate(10deg);
+  } 
+  #email:hover {
+    color: white;
+    transform: scale(1.2) rotate(10deg);
+  }
+  
+  /* Text styling */
+  h2{
+    color: rgba(255, 255, 255, 0.823);
+    
+  }
+  h3 {
+    color: black;
+    font-weight: bold;
+  }
+  
+  p {
+    color: rgb(67, 66, 66);
+  }
+  
+  /* Profile image hover effect */
+  .card img {
+    border: 1px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Title styling */
+    .section-title {
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        letter-spacing: 3px;
+        border: 1px solid black;
+        border-radius: 22px;
+        color: white;
+        background: linear-gradient(
+          135deg, 
+          rgba(0, 0, 0, 0.9) 0%, 
+          rgb(3, 3, 25) 60%
+        );
+    }
+
+
+    /* Subtle gradient animation */
+    @keyframes textGradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    .footer__bar {
+        text-align: center;
+        color: white;
+        font-family:'Courier New', Courier, monospace;
+      }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-6">
+    <h1 class="section-title">Our Team</h1>
+    <!-- Founder Section -->
+    <div class="mb-12 bg-animated p-8 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-semibold mb-4  text-center">Founder & Co-Founder</h2>
+      <div class="flex flex-wrap justify-center">
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+            <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/Kshitiz_sharma.png"/>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Kshitiz sharma</h3>
+              <p>Founder & CEO</p>
+              <p class="mt-2">The driving force behind our mission, steering our team with passion and insight.</p>
+              <div class="social-icons mt-4">
+                <a class="mx-2" href="https://www.linkedin.com/in/kshitiz-sharma-729894246/" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a class="mx-2" href="Kshitizsharma83755@gmail.com" id="email"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+            <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/unknown.jpg"/>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Shekhar Thathera</h3>
+              <p>Co-Founder</p>
+              <p class="mt-2">Bringing vision and strategy to our growing startup.</p>
+              <div class="social-icons mt-4">
+                <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- Management Section -->
+    <div class="mb-12 bg-animated p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold mb-4  text-center">Management Team</h2>
+        <div class="flex flex-wrap justify-center">
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/Pramit_deshwal.png"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Pramit Deshwal</h3>
+                <p>Management head</p>
+                <p class="mt-2">Skilled in orchestrating seamless operations and driving team productivity.</p>
+                <div class="social-icons mt-4">
+                  <a class="mx-2" href="https://www.linkedin.com/in/pramit-deshwal-493411305" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                  <a class="mx-2" href="pramitdeshwal2004@gmail.com" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+          </div>
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/unknown.jpg"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Harshad Jain</h3>
+                <p>Brand Manager</p>
+                <p class="mt-2">Shaping our brand identity and ensuring consistent quality across platforms.</p>
+                <div class="social-icons mt-4">
+                  <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                  <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+          </div>
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+            <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/prajwal.png"/>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Prajwal Tomar</h3>
+              <p>Growth Manager</p>
+              <p class="mt-2">Analyzing trends and driving initiatives to scale our brand impact.</p>
+              <div class="social-icons mt-4">
+                <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- PR & Outreach Team -->
+    <div class="mb-12 bg-animated p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold mb-4 text-center">PR & Outreach Team</h2>
+        <div class="flex flex-wrap justify-center">
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/unknown.jpg"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Shailjaa Shisodiya</h3>
+                <p>PR & OUTREACH </p>
+                <p class="mt-2">Building meaningful connections and expanding our brand reach.</p>
+                <div class="social-icons mt-4">
+                    <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/Khushi_jaiswani.png"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Khushi Jaiswani</h3>
+                <P>Marketing Lead</P>
+                <p class="mt-2">Strategizing innovative approaches to elevate our presence in the market.</p>
+                <div class="social-icons mt-4">
+                    <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+        </div>
+        </div>
+    </div>
+
+     <!-- Developer Section -->
+     <div class="mb-12 bg-animated p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold mb-4 text-center">Technical Team</h2>
+        <div class="flex flex-wrap justify-center">
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/ujjwal.png"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Ujjwal Katiyar</h3>
+                <p>Developer Head</p>
+                <p class="mt-2">Leading technical solutions and product development.</p>
+                <div class="social-icons mt-4">
+                    <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+          </div>
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/sazid_sheikh.png"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Sazid Sheikh</h3>
+                <p>UI/UX Developer</p>
+                <p class="mt-2">Creating smooth, user-friendly interfaces to enhance digital experiences.</p>
+                <div class="social-icons mt-4">
+                    <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+          </div>
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+            <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/himanshu_chaudhari.png"/>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Himanshu Chaudhari</h3>
+              <p>Backend Developer</p>
+              <p class="mt-2">Architecting solid backend solutions to ensure seamless functionality.</p>
+              <div class="social-icons mt-4">
+                <a class="mx-2" href="https://www.linkedin.com/in/himanshu-chaudhari-514552296/" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a class="mx-2" href="hc102023@gmail.com" id="email"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Content Team -->
+    <div class="mb-12 bg-animated p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-semibold mb-4  text-center">Content Team</h2>
+        <div class="flex flex-wrap justify-center">
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/sanya_gupta.jpg"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Sanya Gupta</h3>
+                <p>Content Associate</p>
+                <p class="mt-2">Creating stories that connect with our audience.</p>
+                <div class="social-icons mt-4">
+                    <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden m-4 p-6 w-64">
+              <img alt="Portrait of the founder" class="w-32 h-32 rounded-full mx-auto mt-4" src="./images/ravinesh_kumar.jpg"/>
+              <div class="mt-4 text-center">
+                <h3 class="text-xl font-bold">Ravinesh Kumar</h3>
+                <p>Video Designer</p>
+                <p class="mt-2">creatively translating ideas into engaging visual stories.</p>
+                <div class="social-icons mt-4">
+                    <a class="mx-2" href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="#" id="email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+     <footer>
+        <div class="footer__bar">
+            Copyright © 2024 EventCruX - Startup4Nation Inc. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
